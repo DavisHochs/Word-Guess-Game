@@ -63,11 +63,15 @@ function runGame() {
     
     document.onkeyup = function(e) {
         const userSelection = e.key.toLowerCase();
+        const userAnswers = [];
+        userAnswers.push(userSelection);
         yourGuess.innerText += userSelection;
         
         guessesRemain = document.querySelector('#guess-counter');
         guessesRemain.textContent = guessCounter;
         guessCounter--;
+
+
         
 
         
@@ -96,6 +100,9 @@ function runGame() {
                 lossCounter++;
                 loss.textContent = lossCounter;
                 guessCounter = 10;
+                
+            }
+            if (userAnswers.includes(userSelection)) {
                 
             }
                  
